@@ -25,6 +25,11 @@
               opacity: 0;
             }
 
+            .olho.animation-null {
+              animation: none;
+              opacity: 1;
+            }
+
             @keyframes olho {
               to {
                 opacity: 1;
@@ -86,7 +91,9 @@
 
     document.querySelector('.open').addEventListener('mouseover', () => {
       document.querySelector('.container').classList.toggle('ativo');
-      document.querySelector('.open').classList.add('ativo')
+      document.querySelector('.open').classList.add('ativo');
+      document.querySelector('.olho').classList.add('animation-null');
+
     })
 
     window.addEventListener('keypress', (e) => {
