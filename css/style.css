@@ -56,7 +56,7 @@ svg {
 }
 
 .open.ativo {
-  opacity: 0;
+  display: none;
 }
 
 .sobre-min {
