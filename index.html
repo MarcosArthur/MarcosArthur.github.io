@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <section class="sobre">
+      <button class="btn">X</button>
+      <button class="open">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <style>
+            svg {
+              fill: #e8e6e9;
+            }
+
+            .olho {
+              animation: olho .9s infinite;
+              opacity: 0;
+            }
+
+            @keyframes olho {
+              to {
+                opacity: 1;
+              }
+            }
+
+          </style>
+          <path d="M12 13.997a3.015 3.015 0 0 1-1.8-.597.496.496 0 0 1-.1-.7.503.503 0 0 1 .7-.1 2.014 2.014 0 0 0 2.4 0 .499.499 0 0 1 .795.47.498.498 0 0 1-.195.33 3.015 3.015 0 0 1-1.8.597zM23 24a.5.5 0 0 1-.5-.5v-1.106a1.489 1.489 0 0 0-.575-1.183c-.834-.636-2.305-1.511-4.604-2.095l-4.631 4.415a1.001 1.001 0 0 1-1.38 0l-4.63-4.414c-2.295.584-3.77 1.459-4.607 2.096a1.483 1.483 0 0 0-.573 1.178V23.5a.5.5 0 0 1-1 0v-1.106a2.488 2.488 0 0 1 .965-1.975C2.899 19.328 6.174 17.5 12 17.5c5.839 0 9.105 1.828 10.533 2.917.611.471.972 1.21.967 1.98V23.5a.5.5 0 0 1-.5.5zm-11-1.193l4.142-3.949A22.974 22.974 0 0 0 12 18.5c-1.462 0-2.852.121-4.141.359L12 22.807z" />
+          <circle cx="14" cy="10.5" r=".75" class="olho"/>
+          <circle cx="10" cy="10.5" r=".75" />
+          <path d="M12 17a6.508 6.508 0 0 1-6.5-6.5V4.534l-3-.682V8.37a7.657 7.657 0 0 1 1 4.154A.5.5 0 0 1 3 13H1a.5.5 0 0 1-.5-.477 7.65 7.65 0 0 1 1-4.154V3.395a.743.743 0 0 1-.095-.558.754.754 0 0 1 .569-.569L11.666.062a1.484 1.484 0 0 1 .665 0l9.706 2.206a.749.749 0 0 1-.001 1.463l-3.536.805V10.5c0 3.584-2.916 6.5-6.5 6.5zm-5.5-6.5c0 3.033 2.467 5.5 5.5 5.5s5.5-2.467 5.5-5.5V8.273C16.612 8.592 14.907 9 12 9s-4.612-.408-5.5-.727V10.5zM2.506 12A6.695 6.695 0 0 0 2 9.613 6.7 6.7 0 0 0 1.494 12h1.012zM6.5 7.195C7.068 7.448 8.691 8 12 8c3.308 0 4.931-.553 5.5-.806v-2.43l-5.162 1.174a1.49 1.49 0 0 1-.665 0L6.5 4.762v2.433zm5.394-2.232a.51.51 0 0 0 .223 0L20.744 3l-8.633-1.963a.58.58 0 0 0-.223.001L3.265 3l8.629 1.963z" />
+        </svg>
+
+      </button>
+      <div class="foto">
+        <img src="img/perfil.jpg" alt="foto-profile" class="profile-img">
+      </div>
+      <div class="sobre-min">
+        <h2 class="title">About me</h2>
+        <p class="text">Sou Deselvolvedor web Apaixonao por novas tecnologias</p>
+
+      </div>
+    </section>
+
+    <article class="informacoes">
+      <header class="header-information">
+        <div class="header-container">
+
+          <div class="title">
+            <h1>Marcos <br>Arthur Cruz</h1>
+            <span class="sub-title">Web Development</span>
+          </div>
+
+          <div class="social">
+            <ul>
+              <li>gmail</li>
+              <li>gmail</li>
+              <li>gmail</li>
+              <li>gmail</li>
+            </ul>
+          </div>
+
+        </div>
+      </header>
+    </article>
+  </div>
+  <script>
+    document.querySelectorAll('.btn').forEach(e => {
+      e.addEventListener('click', () => {
+        document.querySelector('.container').classList.toggle('ativo');
+        document.querySelector('.open').classList.remove('ativo')
+      });
+    })
+
+    document.querySelector('.open').addEventListener('click', () => {
+      document.querySelector('.container').classList.toggle('ativo');
+      document.querySelector('.open').classList.add('ativo')
+    })
+
+    document.querySelector('.open').addEventListener('mouseover', () => {
+      document.querySelector('.container').classList.toggle('ativo');
+      document.querySelector('.open').classList.add('ativo')
+    })
+
+    window.addEventListener('keypress', (e) => {
+      if (e.key == "Escape") {
+        document.querySelector('.container').classList.remove('ativo');
+        document.querySelector('.open').classList.remove('ativo');
+      }
+    });
+
+  </script>
+</body>
+
+</html>
