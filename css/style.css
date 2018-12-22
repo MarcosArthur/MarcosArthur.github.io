@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+html {
+  font-size: 1em;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -16,6 +20,7 @@
 body {
   overflow-x: hidden;
 }
+
 .container {
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -73,7 +78,7 @@ svg {
 
 
 .text {
-  font-size: 13px;
+  font-size: 0.84em;
 }
 .title {
   margin-bottom: 10px;
@@ -141,4 +146,13 @@ svg {
 h1 {
   color: #38383a;
 
+}
+
+@media all and (max-width: 920px) {
+  html {
+    font-size: 0.875em;
+  }
+  .header-container {
+    padding: 0px 0px;
+  } 
 }
