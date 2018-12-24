@@ -10,6 +10,8 @@ html {
   border: none;
   box-sizing: border-box;
   font-family: "Default";
+  list-style: none;
+  text-decoration: none;
 }
 
 @font-face {
@@ -79,6 +81,11 @@ svg {
 
 .text {
   font-size: 0.84em;
+}
+
+.text-link {
+  font-size: 1em;
+  color: black;
 }
 .title {
   margin-bottom: 10px;
