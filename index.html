@@ -5,14 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Marcos Arthur - Web Development UX/UI Design e Front End</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- meta tags -->
+  <meta name="description" content="Sou Deselvolvedor web Apaixonao por novas tecnologias ❤️">
+	<meta name="author" content="Marcos Arthur"/>
+  
 </head>
 
 <body>
   <div class="container">
     <section class="sobre">
-      <button class="btn">X</button>
+      <button class="btn close">X</button>
       <button class="open">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <style>
@@ -49,13 +54,17 @@
       </div>
       <div class="sobre-min">
         <h2 class="title">About me</h2>
-        <p class="text">Sou Deselvolvedor web Apaixonao por novas tecnologias ❤️ </p>
-
+        
+        <p class="text">
+          Sou Deselvolvedor web Apaixonao por novas tecnologias ❤️
+        </p>
+      
       </div>
     </section>
 
     <article class="informacoes">
       <header class="header-information">
+
         <div class="header-container">
 
           <div class="title">
@@ -67,15 +76,20 @@
             <ul>
               <li>Nome: Marcos Arthur Cruz De Oliveira</li>
               <li>Data Nascimento: 10/06/1999</li>
-              <li>Email: cruzartur61@gmail.com</li>
+              <li>Email: <a href="mailto:cruzartur61@gmail.com" class="text-link">cruzartur61@gmail.com</a></li>
               <li><a  class="text-link" href="https://github.com/MarcosArthur" target="_blanck" class="text">   Projetos: GitHub</a>
               </li>
             </ul>
           </div>
-
         </div>
       </header>
+
+      <section>
+  
+      </section>
+
     </article>
+
   </div>
   <script>
     document.querySelectorAll('.btn').forEach(e => {
@@ -94,8 +108,12 @@
       document.querySelector('.container').classList.toggle('ativo');
       document.querySelector('.open').classList.add('ativo');
       document.querySelector('.olho').classList.add('animation-null');
-
     })
+
+    document.querySelector('.close').addEventListener('mouseover', () => {
+      document.querySelector('.container').classList.toggle('ativo');
+      document.querySelector('.open').classList.remove('ativo');
+    });
 
     window.addEventListener('keypress', (e) => {
       if (e.key == "Escape") {
