@@ -84,10 +84,8 @@
         </div>
       </header>
 
-      <section>
-        <p>
-          Portifolio em Manunteção.
-        </p>
+      <section class="section-card">
+
       </section>
 
     </article>
@@ -123,6 +121,26 @@
         document.querySelector('.open').classList.remove('ativo');
       }
     });
+
+
+    fetch('https://api.github.com/users/MarcosArthur/repos')
+    .then(response => response.json())
+    .then(response => {
+      let templeite = " ";
+
+      response.forEach(e => {
+        templeite += `
+        <div class="card">
+              <div class="descricao">
+                <h1 class="title-card">${e.name}</h1>
+                <p class="text">${e.description}</p>
+                <a href="${e.html_url}" target="_blanck">Saiba mas</a>
+              </div>
+        </div>
+        `;
+        document.querySelector('.section-card').innerHTML = templeite;
+      })
+    })
 
   </script>
 </body>

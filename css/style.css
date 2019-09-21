@@ -128,7 +128,8 @@ svg {
 .informacoes {
   grid-column: 2;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background: #e8e6e9;
   /* background: red; */
   padding: 0% 30px;
@@ -163,4 +164,39 @@ h1 {
   .header-container {
     padding: 0px 5px;
   } 
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.section-card {
+  padding: 35px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.title-card {
+  margin-bottom: 10px;
+}
+
+.card {
+  max-width: 300px;
+  border-radius: 6px 6px 0px 0px;
+  overflow: hidden;
+}
+
+.descricao {
+  background: white;
+  padding: 10px 10px;
+}
+
+
+@media all and (max-width: 720px) {
+  .section-card {
+    padding: 0px;
+    grid-template-columns: 1fr;
+  }
 }
