@@ -1,0 +1,396 @@
+@charset "UTF-8";
+
+/* COLORS */
+
+:root {
+    --color-background: #181818;
+}
+
+/* RESET */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--color-background);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+}
+
+.hide {
+    display: none;
+    position: fixed;
+    top: 35px;
+    right: 10px;
+    z-index: 0;
+}
+
+.cabecalho {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cabecalho__logo {
+    color: white;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    font-size: clamp(25px, 1.7vw, 80px);
+    position: relative;
+}
+
+.cabecalho__logo::after {
+    content: "Arthur Dev";
+    display: block;
+    margin-top: -13px;
+    font-size: clamp(5px, 0.5vw, 40px);
+}
+
+.cabecalho__menu {
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.cabecalho__menu__item {
+    color: white;
+    display: inline-block;
+    position: relative;
+    padding: 0px 10px;
+}
+
+.cabecalho__menu__item::after {
+    content: "";
+    display: block;
+    transition: all 0.4s;
+    height: 1px;
+    width: 0px;
+    background: white;
+    margin-top: 3px;
+}
+
+.cabecalho__menu__item:hover::after {
+    width: 100%;
+}
+
+.cabecalho__menu__item--curriculum {
+    border: solid 2px white;
+    padding: 5px 10px;
+    border-radius: 2px;
+    transition: all 0.2s;
+}
+
+.cabecalho__menu__item--curriculum:hover {
+    color: black;
+    background: white;
+}
+
+.cabecalho__menu__item--curriculum.cabecalho__menu__item::after {
+    content: none;
+}
+
+.cabecalho__menu__item--fechar {
+    display: none;
+    background-color: transparent;
+    padding: 5px 10px;
+    border: solid 1px red;
+    transition: all 0.2s;
+}
+
+.cabecalho__menu__item--fechar:hover {
+    background: red;
+}
+
+.cabecalho__menu__item--fechar.cabecalho__menu__item::after {
+    content: none;
+}
+
+.cabecalho__menu.ts {
+    transform: translateX(0);
+}
+
+.cabecalho-menu-button {
+    color: white;
+    width: 30px;
+    border-top: 1px solid white;
+    z-index: 1000;
+    margin-right: 30px;
+}
+
+.cabecalho-menu-button:after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 1px;
+    margin-top: 10px;
+
+    background-color: white;
+}
+
+@media all and (max-width: 720px) {
+    .cabecalho {
+        justify-content: space-between;
+        padding: 0px 30px 0px 30px;
+    }
+
+    .cabecalho__menu {
+        flex-direction: column;
+        align-self: flex-start;
+        height: 30vh;
+        transform: translateX(35vw);
+        z-index: 100;
+        margin-top: 50px;
+        right: 0;
+        position: fixed;
+    }
+
+    .aboute-me {
+        width: 80vw;
+    }
+
+    .cabecalho__logo::after {
+        font-size: clamp(9px, 0.8vw, 40px);
+    }
+
+    .hide {
+        display: block;
+    }
+
+    .cabecalho__menu__item--fechar {
+        display: block;
+    }
+
+    .cabecalho-menu-button {
+        display: block;
+    }
+}
+
+.about {
+    width: 100vw;
+    height: 90vh;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about__me {
+    width: 75%;
+}
+
+.about__me__hello {
+    font-size: clamp(20px, 1vw, 80px);
+}
+
+.about__me__info {
+    font-size: clamp(20px, 8vw, 80px);
+}
+
+.about__me__text {
+    width: 50%;
+    margin-top: 15px;
+    line-height: 1.55;
+}
+
+.about__me__hello--animation {
+    animation-name: hello;
+    animation-duration: 3.5s;
+
+    display: inline-block;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes hello {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(14deg);
+    }
+
+    20% {
+        transform: rotate(-8deg);
+    }
+
+    30% {
+        transform: rotate(14deg);
+    }
+
+    40% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    60% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@media all and (max-width: 720px) {
+    .about__me {
+        width: 100vw;
+        padding: 10px;
+    }
+
+    .about__me__text {
+        width: 80vw;
+    }
+}
+
+.journey {
+    height: auto;
+    min-height: 80vh;
+    width: 100vw;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.journey_about {
+    width: 70%;
+    height: 43vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tk {
+    width: 50%;
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.about_my_journey {
+    padding: 5px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.border {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-radius: 10px;
+    transition: border 1s;
+}
+
+.border:hover {
+    border: 1px solid #fff;
+}
+
+.card {
+    width: 55%;
+    height: 100%;
+    background: #808080;
+    border-radius: 10px;
+    transition: background 0.8s;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 70px 63px -60px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+
+.card-hover {
+    background: url("../img/Arthur.jpg") center center no-repeat;
+    background-size: 100%;
+}
+
+.card-hover:hover {
+    background: url("../img/Arthur.jpg") left center no-repeat;
+    background-size: 200%;
+}
+
+.card-hover:hover h2 {
+    opacity: 1;
+}
+
+.card-hover:hover .fa {
+    opacity: 1;
+}
+
+
+
+h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    margin: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+
+.icons {
+    position: relative;
+    fill: #fff;
+    color: #fff;
+    height: 130px;
+    top: 40%;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media all and (max-width: 720px) {
+    .journey_about {
+        flex-direction: column-reverse;
+        height: 100vh;
+    }
+
+    .about_my_journey {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .tk {
+        width: 100%;
+        height: 100%;
+    }
+
+    .card {
+        width: 70%;
+        height: 100%;
+    }
+}
+
+.fx-17 {
+    line-height: 29px;
+    text-align: center;
+}
