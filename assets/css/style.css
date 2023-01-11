@@ -13,6 +13,7 @@
     padding: 0px;
     text-decoration: none;
     font-weight: normal;
+    border: none;
     box-sizing: border-box;
 }
 
@@ -25,6 +26,7 @@ body {
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     overflow-x: hidden;
 }
+
 
 .hide {
     display: none;
@@ -120,13 +122,28 @@ body {
     content: none;
 }
 
-.cabecalho__menu.ts {
+.cabecalho__menu.open-menu {
     transform: translateX(0);
+}
+
+.cabecalho-menu-button.rotate-button {
+    transform: rotate(-50deg);
+    background: #c0392b;
+
+}
+
+.cabecalho-menu-button.rotate-button:after {
+    width: 100%;
+    transform: rotate(50deg);
+    margin-top: 0px;
+    border: solid 1px #c0392b;
 }
 
 .cabecalho-menu-button {
     color: white;
     width: 30px;
+    height: 1%;
+    transition: all .2s;
     border-top: 1px solid white;
     z-index: 1000;
     margin-right: 30px;
@@ -138,8 +155,12 @@ body {
     width: 50%;
     height: 1px;
     margin-top: 10px;
-
     background-color: white;
+}
+
+.title {
+    margin-bottom: 30px;
+    color: white;
 }
 
 @media all and (max-width: 720px) {
@@ -272,13 +293,13 @@ body {
 }
 
 .journey_about {
-    width: 70%;
+    width: 75%;
     height: 43vh;
     display: flex;
     justify-content: space-between;
 }
 
-.tk {
+.my-photo {
     width: 50%;
     padding-left: 10px;
     display: flex;
@@ -327,16 +348,16 @@ body {
 
 
 .card-hover {
-    background: url("../img/Arthur.jpg") center center no-repeat;
+    background: url("../img/Arthur.webp") center center no-repeat;
     background-size: 100%;
 }
 
 .card-hover:hover {
-    background: url("../img/Arthur.jpg") left center no-repeat;
+    background: url("../img/Arthur.webp") left center no-repeat;
     background-size: 200%;
 }
 
-.card-hover:hover h2 {
+.card-hover:hover .card-my-icons {
     opacity: 1;
 }
 
@@ -345,8 +366,7 @@ body {
 }
 
 
-
-h2 {
+.card-my-icons {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #fff;
     margin: 20px;
@@ -379,7 +399,7 @@ h2 {
         padding: 0px;
     }
 
-    .tk {
+    .my-photo {
         width: 100%;
         height: 100%;
     }
@@ -392,5 +412,261 @@ h2 {
 
 .fx-17 {
     line-height: 29px;
+    text-align: justify;
+}
+
+.experiences {
+    width: 100%;
+    height: auto;
+    min-height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.filter-img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.jobs-list {
+    display: flex;
+    height: 55vh;
+}
+
+.jobs-items-button {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.job-item-button {
+    cursor: pointer;
+    color: white;
+    display: inline-block;
+    border: solid 2px white;
+    padding: 5px 10px;
+    border-radius: 2px;
+    transition: all 0.2s;
+    background-color: transparent;
+    margin-bottom: 5px;
+}
+
+.job-item-button.active {
+    color: black;
+    background: white;
+}
+
+.job-item-button:hover {
+    color: black;
+    background: white;
+}
+
+.job-info {
+    width: 30vw;
+    padding: 0px 15px;
+    position: relative;
+    z-index: 100000;
+    color: white;
+}
+
+.job-title {
+    margin-bottom: 10px;
+}
+
+.job-card {
+    opacity: 0;
+    transition: .2s all;
+    position: absolute;
+    top: 0px;
+    min-height: 40vh;
+    /* height: auto; */
+}
+
+.job-card.active {
+    opacity: 1;
+}
+
+.job-description {
+    margin-top: 30px;
+    text-align: justify;
+    line-height: 1.55;
+}
+
+.jobs-technology {
+    margin-top: 30px;
+}
+
+.technology {
+    background: white;
+    color: black;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 6px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.technology:nth-child(even) {
+    background-color: transparent;
+    color: white;
+    border: solid 1px white;
+}
+
+@media all and (max-width: 720px) {
+    .jobs-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .jobs-items-button {
+        flex-direction: row;
+    }
+
+    .job-item-button {
+        margin-left: 5px;
+    }
+
+    .job-info {
+        width: 90vw;
+    }
+}
+
+.contact {
+    color: white;
+    width: 15vw;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 85vh;
+    transform: rotate(90deg);
+}
+
+.contact::after {
+    content: "";
+    display: block;
+    width: 15vw;
+    height: 1px;
+    margin-left: 10px;
+    background: white;
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.custom-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.custom-controls li img {
+    max-width: 100%;
+}
+
+.custom-controls li {
+    opacity: .8;
+    transform: scale(.8);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 2px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .5);
+    transition: .3s;
+}
+
+.custom-controls li.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.arrow-nav {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.arrow-nav button {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border: solid 1px white;
+    background: transparent;
+}
+
+.arrow-nav button.prev {
+    transform: rotate(-180deg);
+}
+
+.title-center {
     text-align: center;
+    color: white;
+}
+
+.card-slide {
+    width: auto;
+    height: 100%;
+    padding: 10px;
+    background: rgba(47, 54, 64, 0.8);
+    transition: .2s opacity;
+    color: white;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    z-index: 2000;
+}
+
+.card-slide:hover {
+    opacity: 1;
+}
+
+.card-description {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 5px;
+    justify-content: space-between;
+}
+
+.title-card {
+    text-align: center;
+    padding: 10px;
+    font-size: clamp(20px, 1vw, 80px);
+}
+
+.container-buttons-cards {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    font-size: clamp(20px, 1vw, 80px);
+    cursor: pointer;
+
+    color: white;
+    display: inline-block;
+    border: solid 2px white;
+    /* border-bottom:  4px solid white !important; */
+    padding: 5px 10px;
+    border-radius: 2px;
+    transition: all 0.2s;
+    background-color: transparent;
+    margin-bottom: 5px;
+}
+
+.button:hover {
+    color: black;
+    background: white;
 }
