@@ -424,7 +424,6 @@ body {
 
 .experiences {
     width: 100%;
-    background: red;
     height: auto;
     /* min-height: 55vh; */
     display: flex;
