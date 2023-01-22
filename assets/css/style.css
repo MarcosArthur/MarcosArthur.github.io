@@ -11,10 +11,11 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
     text-decoration: none;
     font-weight: normal;
     border: none;
-    box-sizing: border-box;
+ 
 }
 
 html {
@@ -294,7 +295,8 @@ body {
 
 .journey_about {
     width: 75%;
-    height: 43vh;
+    min-height: 43vh;
+    height: auto;
     display: flex;
     justify-content: space-between;
 }
@@ -389,6 +391,10 @@ body {
 }
 
 @media all and (max-width: 720px) {
+    .journey {
+        margin-bottom: 30px;
+    }
+
     .journey_about {
         flex-direction: column-reverse;
         height: 100vh;
@@ -402,6 +408,7 @@ body {
     .my-photo {
         width: 100%;
         height: 100%;
+        margin-bottom: 25px;
     }
 
     .card {
@@ -417,8 +424,9 @@ body {
 
 .experiences {
     width: 100%;
+    background: red;
     height: auto;
-    min-height: 55vh;
+    /* min-height: 55vh; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -432,7 +440,7 @@ body {
 
 .jobs-list {
     display: flex;
-    height: 55vh;
+    min-height: 55vh;
 }
 
 .jobs-items-button {
@@ -495,13 +503,14 @@ body {
 }
 
 .jobs-technology {
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .technology {
     background: white;
     color: black;
     display: inline-block;
+    box-sizing: border-box;
     padding: 5px;
     border-radius: 6px;
     margin-left: 5px;
@@ -518,10 +527,13 @@ body {
     .jobs-list {
         flex-direction: column;
         align-items: center;
+        margin-top: 10px;
+        height: auto;
     }
 
     .jobs-items-button {
         flex-direction: row;
+        margin-bottom: 30px;
     }
 
     .job-item-button {
@@ -530,6 +542,11 @@ body {
 
     .job-info {
         width: 90vw;
+    }
+
+    .journey_about {
+        min-height: 100%;
+        height: 100%;
     }
 }
 
