@@ -75,6 +75,7 @@ body {
     display: inline-block;
     position: relative;
     padding: 0px 10px;
+    z-index: 100000;
 }
 
 .cabecalho__menu__item::after {
